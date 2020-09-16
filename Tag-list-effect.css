@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&displayer=swap');
+
+#Tag-list-effect {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background: #333;
+}
+
+#Tag-list-effect ul {
+    margin: 0;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+#Tag-list-effect ul li {
+    position: relative;
+    list-style: none;
+    font-size: 24px;
+    font-weight: 700;
+    color: #777;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-flex;
+    transition: 0.5s;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1;
+}
+
+#Tag-list-effect ul li:hover {
+    color: #fff;
+}
+
+#Tag-list-effect ul li:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    z-index: -1;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+#Tag-list-effect ul li:hover:before {
+    transform-origin: left;
+    transform: scaleX(1);
+    transition: transform 0.5s;   
+}
+
+#Tag-list-effect ul li:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: #000;
+    z-index: -1;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+}
+
+#Tag-list-effect ul li:hover:after {
+    transform-origin: right;
+    transform: scaleX(1);
+    transition: transform 0.5s;   
+}
+
+#Tag-list-effect ul li:nth-child(3n+1):before,
+#Tag-list-effect ul li:nth-child(3n+1):after {
+    background: #ef5777;
+}
+
+#Tag-list-effect ul li:nth-child(3n+2):before,
+#Tag-list-effect ul li:nth-child(3n+2):after {
+    background: #a55eea;
+}
+
+#Tag-list-effect ul li:nth-child(3n+3):before,
+#Tag-list-effect ul li:nth-child(3n+3):after {
+    background: #09d375;
+}
