@@ -10,6 +10,8 @@
     <link rel="stylesheet" type="text/css" href="creative-navbar.css">
     <link rel="stylesheet" type="text/css" href="Typing-navbar.css">
     <link rel="stylesheet" type="text/css" href="Tag-list-effect.css">
+    <link rel="stylesheet" type="text/css" href="Amazing-NavBar-effect.css">
+
 
 </head>
 
@@ -70,10 +72,10 @@
     <section id="Typing-navbar">
         <ul>
             <li>
-               <span>&times;</span> <a href="#" data-text="Home">Home</a>
+                <span>&times;</span> <a href="#" data-text="Home">Home</a>
             </li>
             <li>
-                <span>&times;</span>  <a href="#" data-text="About">About</a>
+                <span>&times;</span> <a href="#" data-text="About">About</a>
             </li>
             <li>
                 <span>&times;</span> <a href="#" data-text="Services">Services</a>
@@ -82,7 +84,7 @@
                 <span>&times;</span> <a href="#" data-text="Portfolio">Portfolio</a>
             </li>
             <li>
-                <span>&times;</span>  <a href="#" data-text="Our Team">Our Team</a>
+                <span>&times;</span> <a href="#" data-text="Our Team">Our Team</a>
             </li>
             <li>
                 <span>&times;</span> <a href="#" data-text="Contact">Contact</a>
@@ -92,7 +94,7 @@
 
 
     <!------ Tag List NavBar Effect------>
-    <section id="Tag-list-effect"> 
+    <section id="Tag-list-effect">
         <ul>
             <li>Latest News</li>
             <li>Related Post</li>
@@ -100,7 +102,77 @@
         </ul>
     </section>
 
+
+    <!------ Amazing NavBar Effect------>
+    <section id="Amazing-NavBar-effect">
+        <nav class="menu">
+            <header>Menu <span>×</span></header>
+            <ol>
+                <li class="menu-item"><a href="#0">Home</a></li>
+                <li class="menu-item"><a href="#0">About</a></li>
+                <li class="menu-item">
+                    <a href="#0">Widgets</a>
+                    <ol class="sub-menu">
+                        <li class="menu-item"><a href="#0">Grocerry</a></li>
+                        <li class="menu-item"><a href="#0">Discount</a></li>
+                        <li class="menu-item"><a href="#0">Huge Sale</a></li>
+                    </ol>
+                </li>
+                <li class="menu-item">
+                    <a href="#0">Juice</a>
+                    <ol class="sub-menu">
+                        <li class="menu-item"><a href="#0">Russi</a></li>
+                        <li class="menu-item"><a href="#0">Paneer Pyaza</a></li>
+                        <li class="menu-item"><a href="#0">Rasbhari</a></li>
+                    </ol>
+                </li>
+                <li class="menu-item"><a href="#0">Contact</a></li>
+            </ol>
+            <footer><button aria-label="Toggle Menu">Toggle</button></footer>
+        </nav>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!------ Amazing NavBar Effect------>
+    <script>
+
+        var $els = $('.menu a, .menu header');
+        var count = $els.length;
+        var grouplength = Math.ceil(count / 3);
+        var groupNumber = 0;
+        var i = 1;
+        $('.menu').css('--count', count + '');
+        $els.each(function (j) {
+            if (i > grouplength) {
+                groupNumber++;
+                i = 1;
+            }
+            $(this).attr('data-group', groupNumber);
+            i++;
+        });
+
+        $('.menu footer button').on('click', function (e) {
+            e.preventDefault();
+            $els.each(function (j) {
+                $(this).css('--top', $(this)[0].getBoundingClientRect().top + ($(this).attr('data-group') * -15) - 20);
+                $(this).css('--delay-in', j * .1 + 's');
+                $(this).css('--delay-out', (count - j) * .1 + 's');
+            });
+            $('.menu').toggleClass('closed');
+            e.stopPropagation();
+        });
+
+        // run animation once at beginning for demo
+        setTimeout(function () {
+            $('.menu footer button').click();
+            setTimeout(function () {
+                $('.menu footer button').click();
+            }, (count * 100) + 500);
+        }, 1000);
+        
+    </script>
+
 </body>
 
 </html>
-
