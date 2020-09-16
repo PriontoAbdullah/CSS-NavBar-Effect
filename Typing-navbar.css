@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&displayer=swap');
+
+#Typing-navbar {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1c234a;
+}
+
+#Typing-navbar ul {
+    position: relative;
+}
+
+#Typing-navbar ul li {
+    list-style: none;
+    margin: 0 20px;
+    font-size: 4em;
+}
+
+#Typing-navbar ul li span {
+    position: relative;
+    left: -8px;
+    color: transparent;
+}
+
+#Typing-navbar ul li:hover span {
+    color: #ef0448;
+}
+
+#Typing-navbar ul li a {
+    position: relative;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+#Typing-navbar ul li a:before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #1bfaad;
+}
+
+#Typing-navbar ul:hover li a:before {
+    animation: animates 0.5s steps(9) forwards;
+} 
+
+@keyframes animates {
+    0% {
+        width: 387.063px;
+    }
+    100% {
+        width: 0px;
+    }
+}
+
+#Typing-navbar ul li:hover a:before {
+    animation: animateTwo 1s steps(9) forwards;
+} 
+
+@keyframes animateTwo {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 387.063px;
+    }
+}
