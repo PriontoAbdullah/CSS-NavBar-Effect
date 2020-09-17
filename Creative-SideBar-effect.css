@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900&displayer=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#Creative-SideBar-effect {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: #150019;
+
+}
+
+.SideBar {
+    position: fixed;
+    width: 60px;
+    height: 100%;
+    background: #3e0748;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+ .SideBar:hover,
+ .SideBar.active {
+    width: 300px;
+}
+
+ .SideBar ul {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+ .SideBar ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+
+ .SideBar ul li:hover {
+    background: #ea1d63;
+}
+
+ .SideBar ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+
+.SideBar ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+.SideBar ul li a .icon .fa {
+    font-size: 24px;
+}
+
+ .SideBar ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: #330748;
+    cursor: pointer;
+}
+
+.toggle.active {
+    background: #ea1d63;
+}
+
+ .toggle::before {
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+}
+
+ .toggle.active::before {
+    content: '\f00d';
+}
+
+@media (max-width: 767px) {
+    .SideBar {
+        left: -60px;
+    }
+    .SideBar.active {
+        left: 0;
+        width: 100%;
+    }
+}
